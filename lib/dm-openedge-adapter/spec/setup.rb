@@ -8,7 +8,7 @@ module DataMapper
       class OpenedgeAdapter < Adapter
         
         def test_connection(adapter)
-          adapter.select('SELECT TOP 1 * FROM SYSPROGRESS.SYSCALCTABLE')
+          adapter.select('SELECT SIGN(1) FROM SYSPROGRESS.SYSCALCTABLE')
         end
 
       end
