@@ -17,10 +17,10 @@ Gem::Specification.new do |gem|
   gem.require_paths = %w[ lib ]
   gem.version       = DataMapper::OpenedgeAdapter::VERSION
 
-  gem.add_runtime_dependency('dm-do-adapter', [ '~> 1.3.0.beta' ])
-  gem.add_runtime_dependency('do_openedge',     [ '~> 0.10.6'     ])
+  gem.add_runtime_dependency('dm-do-adapter', [ '~> 1.2.0' ])
+  gem.add_runtime_dependency('do_openedge',     [ '~> 0.10.8'     ])
 
-  gem.add_development_dependency('dm-migrations', [ '~> 1.3.0.beta' ])
+  gem.add_development_dependency('dm-migrations', [ '~> 1.2.0' ])
   gem.add_development_dependency('rake',          [ '~> 0.9.2'      ])
   gem.add_development_dependency('rspec',         [ '~> 1.3.2'      ])
 end
