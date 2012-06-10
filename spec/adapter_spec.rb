@@ -17,8 +17,8 @@ describe 'DataMapper::Adapters::OpenedgeAdapter' do
   before :all do
     # speed up test execution
     adapter.class.class_eval do
-      auto_migrate_with :delete           # table data will be deleted instead of dropping and creating table
-      auto_migrate_reset_sequences false  # primary key sequences will not be reset
+      #auto_migrate_with :delete           # table data will be deleted instead of dropping and creating table
+      #auto_migrate_reset_sequences false  # primary key sequences will not be reset
     end
 
   end
@@ -26,7 +26,7 @@ describe 'DataMapper::Adapters::OpenedgeAdapter' do
   it_should_behave_like "An Adapter"
   it_should_behave_like "A DataObjects Adapter"
 
-
+=begin
   describe "sequences" do
 
     include SQLLogHelper
@@ -166,4 +166,5 @@ describe 'DataMapper::Adapters::OpenedgeAdapter' do
 
 
   end
+=end
 end
