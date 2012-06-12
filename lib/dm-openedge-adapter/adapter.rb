@@ -55,10 +55,10 @@ module DataMapper
         end
 =end
 
-        # TODO: check this. if this doesn't work then delete it and
-        # def supports_default_values? false; end
-        def default_values_clause
-          'VALUES (DEFAULT)'
+        # DEFAULT can only be specified for specific column values in the VALUES
+        # portion of an INSERT, not as a general predicate for the entire statement.
+        def supports_default_values?
+          false
         end
 
         # OpenEdge supports LIMIT using TOP, but no support for OFFSET exists.
