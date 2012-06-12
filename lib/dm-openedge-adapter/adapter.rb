@@ -62,22 +62,19 @@ module DataMapper
         end
 
         # OpenEdge supports LIMIT using TOP, but no support for OFFSET exists.
-        # However, there is planned support sometime in 11.x for a ROWNUM pseudocolumn
-        # similar to Oracle according to ER OE00219573
+        # There is an enhancement request to request support for a ROWNUM pseudocolumn
+        # similar to Oracle, but it may never materialize. ER OE00219573:
         # http://knowledgebase.progress.com/articles/Article/000030693
         #
-        # TODO: When OFFSET/ROWNUM support is added, fix this method. If ROWNUM is
+        # TODO: If/when OFFSET/ROWNUM support is added, fix this method. If ROWNUM is
         # added, see the dm-oracle-adapter for an implementation using nested queries.
-        #
-        # For now, the offset must be handed down to do_openedge to manually adjust the
-        # resultset.
         def add_limit_offset!(statement, limit, offset, bind_values)
           if limit
-            #if !offset || offset == 0
             statement.replace statement.gsub(/^SELECT/i, 'SELECT TOP #{limit}')
           end
 
-          #TODO handle offsets
+          # TODO handle offsets - perhaps send a signal down to do_openedge
+          # to manually adjust the ResultSet cursor?
         end
 
       end #module SQL
