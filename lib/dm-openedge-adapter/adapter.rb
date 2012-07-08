@@ -70,7 +70,7 @@ module DataMapper
         # added, see the dm-oracle-adapter for an implementation using nested queries.
         def add_limit_offset!(statement, limit, offset, bind_values)
           if limit
-            statement.replace statement.gsub(/^SELECT/i, 'SELECT TOP #{limit}')
+            statement.replace statement.gsub(/^SELECT/i, "SELECT TOP #{limit}")
           end
 
           # TODO handle offsets - perhaps send a signal down to do_openedge
