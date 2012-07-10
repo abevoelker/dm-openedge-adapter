@@ -3,7 +3,7 @@ require 'spec_helper'
 require 'dm-core/spec/shared/adapter_spec'
 require 'dm-do-adapter/spec/shared_spec'
 
-require 'dm-migrations'
+#require 'dm-migrations'
 require 'dm-openedge-adapter/spec/setup'
 
 ENV['ADAPTER']          = 'openedge'
